@@ -41,7 +41,10 @@ class ViewController: UIViewController {
         sphere.firstMaterial?.diffuse.contents = play()
         let sphereNode = SCNNode(geometry: sphere)
         sphereNode.position = SCNVector3(0, 0, 0)
-    
+        //球体沿y轴旋转180度，显示视频正确前后
+        sphereNode.rotation = SCNVector4Make(0, 1, 0, Float.pi)
+        //球体沿x轴旋转180度，显示视频正确上下
+        //sphereNode.rotation = SCNVector4Make(1, 0, 0, Float.pi)
         scene.rootNode.addChildNode(cameraNode)
         scene.rootNode.addChildNode(sphereNode)
         //scnView.play(self)
@@ -49,13 +52,16 @@ class ViewController: UIViewController {
             fatalError("Device motion is not available")
         }
         addMotion()
+        scnView.play(self)
+        
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.scnView.play(self)
-    }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.scnView.play(self)
+//    }
     func play() -> SKScene{
-        guard let url = Bundle.main.url(forResource: "b", withExtension: "mp4") else{
+        guard let url = Bundle.main.url(forResource: "aT", withExtension: "mp4") else{
             fatalError()
         }
         let player = AVPlayer(url: url)
@@ -63,6 +69,7 @@ class ViewController: UIViewController {
         videoNode.size = CGSize(width: 2000, height: 1000)
         //videoNode.size = CGSize(width:view.frame.width, height:view.frame.height)
         videoNode.position = CGPoint(x: videoNode.size.width/2, y: videoNode.size.height/2)
+        //把视频位置上下颠倒，才能显示上下正确的
         videoNode.zRotation = CGFloat(Double.pi)
         videoNode.play()
         let skScene = SKScene(size: videoNode.size)
