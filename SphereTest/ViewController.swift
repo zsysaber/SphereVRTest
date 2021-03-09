@@ -58,7 +58,6 @@ class ViewController: UIViewController {
         guard let url = Bundle.main.url(forResource: "b", withExtension: "mp4") else{
             fatalError()
         }
-        print("aaaaa")
         let player = AVPlayer(url: url)
         let videoNode = SKVideoNode(avPlayer: player)
         videoNode.size = CGSize(width: 2000, height: 1000)
