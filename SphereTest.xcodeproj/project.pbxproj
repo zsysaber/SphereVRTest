@@ -17,6 +17,7 @@
 		DAFA869E25F5F04800AEBA10 /* img.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAFA869D25F5F04800AEBA10 /* img.jpg */; };
 		DAFA86CC25F60F8200AEBA10 /* b.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DAFA86CB25F60F8200AEBA10 /* b.mp4 */; };
 		DAFA86DE25F70FDB00AEBA10 /* aT.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DAFA86DD25F70FDB00AEBA10 /* aT.mp4 */; };
+		DAFA870B25F9F66100AEBA10 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA870A25F9F66100AEBA10 /* TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		DAFA869D25F5F04800AEBA10 /* img.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img.jpg; sourceTree = "<group>"; };
 		DAFA86CB25F60F8200AEBA10 /* b.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = b.mp4; sourceTree = "<group>"; };
 		DAFA86DD25F70FDB00AEBA10 /* aT.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = aT.mp4; sourceTree = "<group>"; };
+		DAFA870A25F9F66100AEBA10 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				DAFA865E25F1EC2D00AEBA10 /* AppDelegate.swift */,
 				DAFA866025F1EC2D00AEBA10 /* SceneDelegate.swift */,
 				DAFA866225F1EC2D00AEBA10 /* ViewController.swift */,
+				DAFA870A25F9F66100AEBA10 /* TableView.swift */,
 				DAFA866425F1EC2D00AEBA10 /* Main.storyboard */,
 				DAFA866725F1EC3300AEBA10 /* Assets.xcassets */,
 				DAFA866925F1EC3300AEBA10 /* LaunchScreen.storyboard */,
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAFA866325F1EC2D00AEBA10 /* ViewController.swift in Sources */,
+				DAFA870B25F9F66100AEBA10 /* TableView.swift in Sources */,
 				DAFA865F25F1EC2D00AEBA10 /* AppDelegate.swift in Sources */,
 				DAFA866125F1EC2D00AEBA10 /* SceneDelegate.swift in Sources */,
 			);
@@ -232,7 +236,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -287,7 +291,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -302,6 +306,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4382UUDHW6;
 				INFOPLIST_FILE = SphereTest/Info.plist;
@@ -309,8 +314,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "zsysaber-yahoo.co.jp.SphereTest";
+				PRODUCT_BUNDLE_IDENTIFIER = "zsysaber-yahoo.co.jp.SphereTestDOL";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -321,6 +327,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4382UUDHW6;
 				INFOPLIST_FILE = SphereTest/Info.plist;
@@ -328,8 +335,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "zsysaber-yahoo.co.jp.SphereTest";
+				PRODUCT_BUNDLE_IDENTIFIER = "zsysaber-yahoo.co.jp.SphereTestDOL";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

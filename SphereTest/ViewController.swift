@@ -14,28 +14,36 @@ import CoreMotion
 class ViewController: UIViewController {
 
     @IBOutlet weak var scnView: SCNView!
+    let scene = SCNScene()
     let cameraNode = SCNNode()
+    let sphere = SCNSphere(radius: 50)
     let motionManager = CMMotionManager()
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        materialToSCN()
         
+        //scnView.play(self)
+        guard motionManager.isDeviceMotionAvailable else {
+            fatalError("Device motion is not available")
+        }
+        addMotion()
+        scnView.play(self)
+        NotificationCenter.default.addObserver(self, selector: #selector(playisFinished(notification:)), name: .AVPlayerItemDidPlayToEndTime, object: nil)
+    }
+    
+    @objc func playisFinished(notification:Notification){
+        materialToSCN()
+    }
+    func materialToSCN(){
         scnView.showsStatistics = true
         //可以旋转模型
         //scnView.allowsCameraControl = true
-        let scene = SCNScene()
         scnView.scene = scene
-   
         cameraNode.position = SCNVector3(0, 0, 0)
         cameraNode.camera = SCNCamera()
-        
-       
-        
-        let sphere = SCNSphere(radius: 50)
-        
         sphere.firstMaterial?.cullMode = .front
         sphere.firstMaterial?.isDoubleSided = false
-        
 //        let url = Bundle.main.url(forResource: "img", withExtension: "jpg")
 //        sphere.firstMaterial?.diffuse.contents = url
         sphere.firstMaterial?.diffuse.contents = play()
@@ -47,24 +55,17 @@ class ViewController: UIViewController {
         //sphereNode.rotation = SCNVector4Make(1, 0, 0, Float.pi)
         scene.rootNode.addChildNode(cameraNode)
         scene.rootNode.addChildNode(sphereNode)
-        //scnView.play(self)
-        guard motionManager.isDeviceMotionAvailable else {
-            fatalError("Device motion is not available")
-        }
-        addMotion()
-        scnView.play(self)
-        
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.scnView.play(self)
-//    }
     func play() -> SKScene{
-        guard let url = Bundle.main.url(forResource: "aT", withExtension: "mp4") else{
+        guard let url = Bundle.main.url(forResource: "a", withExtension: "mp4") else{
             fatalError()
         }
-        let player = AVPlayer(url: url)
+        let item = AVPlayerItem(url: url)
+        //let player = AVPlayer(url: url)
+        let player = AVPlayer()
+        player.replaceCurrentItem(with: item)
+        player.actionAtItemEnd = .none
+        
         let videoNode = SKVideoNode(avPlayer: player)
         videoNode.size = CGSize(width: 2000, height: 1000)
         //videoNode.size = CGSize(width:view.frame.width, height:view.frame.height)
