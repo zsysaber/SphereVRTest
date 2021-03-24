@@ -10,17 +10,25 @@ import SceneKit
 import SpriteKit
 import AVFoundation
 import CoreMotion
+import Alamofire
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var scnView: SCNView!
     let scene = SCNScene()
     let cameraNode = SCNNode()
-    let sphere = SCNSphere(radius: 50)
+    let sphere = SCNSphere(radius: 20)
     let motionManager = CMMotionManager()
+    var onlineUrl:String?
+    let application = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        scnView.scene = scene
+        cameraNode.position = SCNVector3(0, 0, 0)
+        cameraNode.camera = SCNCamera()
+        scene.rootNode.addChildNode(cameraNode)
         materialToSCN()
         
         //scnView.play(self)
@@ -31,17 +39,21 @@ class ViewController: UIViewController {
         scnView.play(self)
         NotificationCenter.default.addObserver(self, selector: #selector(playisFinished(notification:)), name: .AVPlayerItemDidPlayToEndTime, object: nil)
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        application.rotation = true
+        UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+        
+    }
     @objc func playisFinished(notification:Notification){
+        //放个监视器，一播完，就重播
         materialToSCN()
     }
     func materialToSCN(){
-        scnView.showsStatistics = true
+        //scnView.showsStatistics = true
         //可以旋转模型
         //scnView.allowsCameraControl = true
-        scnView.scene = scene
-        cameraNode.position = SCNVector3(0, 0, 0)
-        cameraNode.camera = SCNCamera()
+        
         sphere.firstMaterial?.cullMode = .front
         sphere.firstMaterial?.isDoubleSided = false
 //        let url = Bundle.main.url(forResource: "img", withExtension: "jpg")
@@ -53,11 +65,14 @@ class ViewController: UIViewController {
         sphereNode.rotation = SCNVector4Make(0, 1, 0, Float.pi)
         //球体沿x轴旋转180度，显示视频正确上下
         //sphereNode.rotation = SCNVector4Make(1, 0, 0, Float.pi)
-        scene.rootNode.addChildNode(cameraNode)
+        
         scene.rootNode.addChildNode(sphereNode)
     }
     func play() -> SKScene{
-        guard let url = Bundle.main.url(forResource: "a", withExtension: "mp4") else{
+//        guard let url = Bundle.main.url(forResource: "aT", withExtension: "mp4") else{
+//            fatalError()
+//        }
+        guard let url = URL(string: onlineUrl!) else{
             fatalError()
         }
         let item = AVPlayerItem(url: url)

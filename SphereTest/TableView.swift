@@ -8,12 +8,21 @@
 import UIKit
 
 class TableView: UITableViewController {
-    let nameArray = ["example","test1","test2","test3","test4"]
+    let nameArray = ["test1","test2","test3","test4"]
+    let urlArray = ["https://www.hiu-sic.com/Aurora/20120327.mp4",
+                    "https://www.hiu-sic.com/Aurora/20161002.mp4",
+                    "https://www.hiu-sic.com/Aurora/20161209.mp4",
+                    "https://www.hiu-sic.com/Aurora/20180904.mp4"]
+    let application = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        application.rotation = false
+        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -28,8 +37,8 @@ class TableView: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel!.text = nameArray[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tvCell", for: indexPath) as! TVcell
+        cell.name.text = nameArray[indexPath.row]
         return cell
     }
    
@@ -69,14 +78,18 @@ class TableView: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! TVcell
+        let index = tableView.indexPath(for: cell)!.row
+        let vc = segue.destination as! ViewController
+        vc.onlineUrl = urlArray[index]
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

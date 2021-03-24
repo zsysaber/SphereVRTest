@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AFC41A7736DD8CB336904209 /* Pods_SphereTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5A6CEEC3CAF25169921087 /* Pods_SphereTest.framework */; };
 		DAFA865F25F1EC2D00AEBA10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA865E25F1EC2D00AEBA10 /* AppDelegate.swift */; };
 		DAFA866125F1EC2D00AEBA10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA866025F1EC2D00AEBA10 /* SceneDelegate.swift */; };
 		DAFA866325F1EC2D00AEBA10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA866225F1EC2D00AEBA10 /* ViewController.swift */; };
@@ -18,9 +19,12 @@
 		DAFA86CC25F60F8200AEBA10 /* b.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DAFA86CB25F60F8200AEBA10 /* b.mp4 */; };
 		DAFA86DE25F70FDB00AEBA10 /* aT.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DAFA86DD25F70FDB00AEBA10 /* aT.mp4 */; };
 		DAFA870B25F9F66100AEBA10 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA870A25F9F66100AEBA10 /* TableView.swift */; };
+		DAFA8770260AD87600AEBA10 /* TVcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA876F260AD87600AEBA10 /* TVcell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		897AA79544B230987BCC80F0 /* Pods-SphereTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SphereTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SphereTest/Pods-SphereTest.release.xcconfig"; sourceTree = "<group>"; };
+		9D5A6CEEC3CAF25169921087 /* Pods_SphereTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SphereTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAFA865B25F1EC2D00AEBA10 /* SphereTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SphereTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAFA865E25F1EC2D00AEBA10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAFA866025F1EC2D00AEBA10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +38,8 @@
 		DAFA86CB25F60F8200AEBA10 /* b.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = b.mp4; sourceTree = "<group>"; };
 		DAFA86DD25F70FDB00AEBA10 /* aT.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = aT.mp4; sourceTree = "<group>"; };
 		DAFA870A25F9F66100AEBA10 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		DAFA876F260AD87600AEBA10 /* TVcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVcell.swift; sourceTree = "<group>"; };
+		E0F800BFDC5344555AF71D18 /* Pods-SphereTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SphereTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SphereTest/Pods-SphereTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +47,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFC41A7736DD8CB336904209 /* Pods_SphereTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B018BD1302DD768754275FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E0F800BFDC5344555AF71D18 /* Pods-SphereTest.debug.xcconfig */,
+				897AA79544B230987BCC80F0 /* Pods-SphereTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DAFA865225F1EC2D00AEBA10 = {
 			isa = PBXGroup;
 			children = (
 				DAFA865D25F1EC2D00AEBA10 /* SphereTest */,
 				DAFA865C25F1EC2D00AEBA10 /* Products */,
+				0B018BD1302DD768754275FF /* Pods */,
+				E7F99E6242CD6E1B65F83522 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,8 +96,17 @@
 				DAFA869D25F5F04800AEBA10 /* img.jpg */,
 				DAFA86CB25F60F8200AEBA10 /* b.mp4 */,
 				DAFA86DD25F70FDB00AEBA10 /* aT.mp4 */,
+				DAFA876F260AD87600AEBA10 /* TVcell.swift */,
 			);
 			path = SphereTest;
+			sourceTree = "<group>";
+		};
+		E7F99E6242CD6E1B65F83522 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D5A6CEEC3CAF25169921087 /* Pods_SphereTest.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAFA866F25F1EC3300AEBA10 /* Build configuration list for PBXNativeTarget "SphereTest" */;
 			buildPhases = (
+				40DE62342C00A2CC522AA007 /* [CP] Check Pods Manifest.lock */,
 				DAFA865725F1EC2D00AEBA10 /* Sources */,
 				DAFA865825F1EC2D00AEBA10 /* Frameworks */,
 				DAFA865925F1EC2D00AEBA10 /* Resources */,
+				571807CBFC2ED72C885E385B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,11 +180,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		40DE62342C00A2CC522AA007 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SphereTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		571807CBFC2ED72C885E385B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SphereTest/Pods-SphereTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SphereTest/Pods-SphereTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DAFA865725F1EC2D00AEBA10 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAFA8770260AD87600AEBA10 /* TVcell.swift in Sources */,
 				DAFA866325F1EC2D00AEBA10 /* ViewController.swift in Sources */,
 				DAFA870B25F9F66100AEBA10 /* TableView.swift in Sources */,
 				DAFA865F25F1EC2D00AEBA10 /* AppDelegate.swift in Sources */,
@@ -303,43 +372,45 @@
 		};
 		DAFA867025F1EC3300AEBA10 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0F800BFDC5344555AF71D18 /* Pods-SphereTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4382UUDHW6;
 				INFOPLIST_FILE = SphereTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "zsysaber-yahoo.co.jp.SphereTestDOL";
+				PRODUCT_BUNDLE_IDENTIFIER = "zsysaber-yahoo.co.jp.SphereTest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = Aurora;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		DAFA867125F1EC3300AEBA10 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 897AA79544B230987BCC80F0 /* Pods-SphereTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4382UUDHW6;
 				INFOPLIST_FILE = SphereTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "zsysaber-yahoo.co.jp.SphereTestDOL";
+				PRODUCT_BUNDLE_IDENTIFIER = "zsysaber-yahoo.co.jp.SphereTest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = Aurora;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
